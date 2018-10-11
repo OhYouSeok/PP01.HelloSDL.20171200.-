@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\PP07\game.cpp">
+    <ClCompile Include="game.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\PP07\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\PP07\TextureManager.cpp">
+    <ClCompile Include="TextureManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\PP07\game.h">
+    <ClInclude Include="game.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\PP07\TextureManager.h">
+    <ClInclude Include="textureManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

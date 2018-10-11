@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h" />
+    <ClInclude Include="textureManager.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{A68FEC1A-2D74-46C9-B8E7-5B9C2F6CA402}</ProjectGuid>
@@ -114,15 +123,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\PP07\game.cpp" />
-    <ClCompile Include="..\PP07\main.cpp" />
-    <ClCompile Include="..\PP07\TextureManager.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\PP07\game.h" />
-    <ClInclude Include="..\PP07\TextureManager.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
