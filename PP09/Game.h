@@ -1,4 +1,6 @@
 #include "TextureManager.h"
+#include "Player.h"
+#include "GameObject.h"
 
 class Game {
 public:
@@ -19,5 +21,7 @@ private:
 
 	int currentRow = 1;
 	int currentFrame = 1;
-	int currentFrame2 = 1;
-}; 
+
+	GameObject m_go;
+	Player m_player;
+};
