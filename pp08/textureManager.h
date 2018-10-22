@@ -23,4 +23,4 @@ private:
 	static TextureManager * pInstance;
 };
 
-typedef TextureManager TheText
+typedef TextureManager TheTextureManager;
