@@ -11,19 +11,28 @@ bool Game::init(std::string title, int xpos, int ypos, int width, int height, bo
 
 		SDL_SetRenderDrawColor(renderer, 50, 0, 0, 255);
 
-		if (!TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", renderer)) {
+		if (!TheTextureManager::Instance()->load("assets/1.png", "animate", renderer)) {
 		}
-		m_go = new GameObject();
-		m_player = new Player();
-		m_enemy = new Enemy();
+		//m_go = new GameObject();
+		//m_player = new Player();
+		//m_enemy = new Enemy();
 
-		m_go->load(100, 100, 128, 82,1,1, "animate");
-		m_player->load(300, 300, 128, 82,1,1, "animate");
-		m_enemy->load(0, 0, 128, 82,1,1, "animate");
+		//m_go->load(100, 100, 128, 82,1,1, "animate");
+		//m_player->load(300, 300, 128, 82,1,1, "animate");
+		//m_enemy->load(0, 0, 128, 82,1,1, "animate");
 
-		m_gameObjects.push_back(m_go);
-		m_gameObjects.push_back(m_player);
-		m_gameObjects.push_back(m_enemy);
+		//m_gameObjects.push_back(m_go);
+		//m_gameObjects.push_back(m_player);
+		//m_gameObjects.push_back(m_enemy);
+
+		m_monster = new Monster();
+		m_monster->load(0, 0, 154, 228, 1, 1, "animate");
+		m_gameObjects.push_back(m_monster);
+
+		m_monster2 = new Monster();
+		m_monster2->load(0, 300, 154, 228, 1, 1, "animate");
+		m_gameObjects.push_back(m_monster2);
+		m_monster2->ChangeSpeed();
 		return true;
 	}
 	else {
