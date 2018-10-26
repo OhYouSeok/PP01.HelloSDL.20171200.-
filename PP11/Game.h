@@ -30,7 +30,7 @@ private:
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 	Game();
-
+	~Game();
 	std::vector<GameObject*> m_gameObjects;
 
 };

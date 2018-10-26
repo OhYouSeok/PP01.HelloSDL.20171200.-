@@ -2,7 +2,7 @@
 #include "Game.h"
 
 Game * Game::s_pInstance = 0;
-
+Game::Game() {};
 bool Game::init(std::string title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 		window = SDL_CreateWindow(title.c_str(), xpos, ypos, width, height, fullscreen);
@@ -13,7 +13,7 @@ bool Game::init(std::string title, int xpos, int ypos, int width, int height, bo
 
 		if (!TheTextureManager::Instance()->load("assets/1.png", "animate", renderer)) {
 		}
-		m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82, "animate")));
+		m_gameObjects.push_back(new Player(new LoaderParams(0, 0, 128, 82, "animate")));
 		m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate")));
 		return true;
 	}
