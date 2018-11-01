@@ -39,4 +39,5 @@ void Player::handleInput()
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_1)) {
 		TheGame::Instance()->clean();
 	}
+
 }

@@ -16,3 +16,15 @@ void Enemy::update()
 void Enemy::clean()
 {
 }
+
+void Enemy::handleInput() {
+	// void Enemy::handleInput() 추가 : 마우스 button
+	if (TheInputHandler::Instance()->getMouseButtonState(TheInputHandler::LEFT))
+	{
+		m_velocity.setX(1);
+	}
+
+	// void Enemy::handleInput() 추가 : 마우스 motion
+	Vector2D* vec = TheInputHandler::Instance()->getMousePosition();
+	m_velocity = (*vec - m_position) / 100;
+}

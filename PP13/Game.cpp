@@ -48,6 +48,7 @@ void Game::render() {
 }
 
 void Game::clean() {
+	m_bRunning = false;
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	TheInputHandler::Instance()->clean();

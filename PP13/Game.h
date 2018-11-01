@@ -25,8 +25,8 @@ public:
 	SDL_Renderer* getRenderer() const { return renderer; }
 
 private:
-	static Game * s_pInstance;
 	bool m_bRunning;
+	static Game * s_pInstance;
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 	Game();
