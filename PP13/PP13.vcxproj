@@ -20,6 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Project1\pch.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletManager.h" />
+    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
@@ -29,6 +32,8 @@
     <ClInclude Include="SDLGameObject.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="Wall.h" />
+    <ClInclude Include="WallManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Project1\pch.cpp">
@@ -37,6 +42,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletManager.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="InputHandler.cpp" />
@@ -44,6 +52,8 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SDLGameObject.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="WallManager.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -99,6 +109,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\dhdbt\Source\Repos\PP01.HelloSDL.20171200.-\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\dhdbt\Source\Repos\PP01.HelloSDL.20171200.-\SDL2-2.0.8\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -120,8 +132,9 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

@@ -1,6 +1,7 @@
 #pragma once
 #include "Game.h"
-
+#include "WallManager.h"
+#include "CollisionManager.h"
 Game * Game::s_pInstance = 0;
 Game::Game() {};
 bool Game::init(std::string title, int xpos, int ypos, int width, int height, bool fullscreen) {
@@ -13,8 +14,14 @@ bool Game::init(std::string title, int xpos, int ypos, int width, int height, bo
 
 		if (!TheTextureManager::Instance()->load("assets/1.png", "animate", renderer)) {
 		}
+		if (!TheTextureManager::Instance()->load("assets/1111.png", "bullet", renderer)) {
+		}
+		if (!TheTextureManager::Instance()->load("assets/2.png", "Wall", renderer)) {
+		}
+		if (!TheTextureManager::Instance()->load("assets/qwe.png", "BreakWall", renderer)) {
+		}
 		m_gameObjects.push_back(new Player(new LoaderParams(0, 0, 128, 82, "animate")));
-		m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82, "animate")));
+		WallManager::getInstance()->PushBackWall(new Wall(new LoaderParams(500, 20, 100, 100, "Wall")));
 		return true;
 	}
 	else {
@@ -33,6 +40,8 @@ void Game::update() {
 	{
 		m_gameObjects[i]->update();
 	}
+	WallManager::getInstance()->update();
+	CollisionManager::getInstance()->update();
 }
 
 void Game::render() {
@@ -43,7 +52,7 @@ void Game::render() {
 	{
 		m_gameObjects[i]->draw();
 	}
-
+	WallManager::getInstance()->draw();
 	SDL_RenderPresent(renderer);
 }
 

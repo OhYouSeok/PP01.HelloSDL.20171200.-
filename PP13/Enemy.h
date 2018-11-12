@@ -1,6 +1,8 @@
 #pragma once
 #include "SDLGameObject.h"
 #include "InputHandler.h"
+#include <iostream>
+#include <map>
 class Enemy : public SDLGameObject
 {
 public:
@@ -8,6 +10,7 @@ public:
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
+
 private:
 	void handleInput();
 };

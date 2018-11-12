@@ -5,18 +5,19 @@
 class SDLGameObject : public GameObject
 {
 public:
-	Vector2D m_position;
-	Vector2D m_velocity;
-	Vector2D m_acceleration;
 	SDLGameObject(const LoaderParams* pParams);
 	virtual void draw();
 	virtual void update() = 0;
 	virtual void clean() = 0;
-
+	SDL_Rect getRect() ;
+	std::string getTextureID() const;
 protected:
 	int m_width;
 	int m_height;
 	int m_currentRow;
 	int m_currentFrame;
 	std::string m_textureID;
+	Vector2D m_position;
+	Vector2D m_velocity;
+	Vector2D m_acceleration;
 };

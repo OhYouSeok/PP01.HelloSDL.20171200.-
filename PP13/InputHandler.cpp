@@ -71,12 +71,6 @@ void InputHandler::update()
 			m_mouseButtonStates[RIGHT] = false;
 		}
 	}
-	// void InputHandler::update()에 추가 : 마우스 Motion 이벤트
-	if (event.type == SDL_MOUSEMOTION)
-	{
-		m_mousePosition->setX(event.motion.x);
-		m_mousePosition->setY(event.motion.y);
-	}
 
 }
 
