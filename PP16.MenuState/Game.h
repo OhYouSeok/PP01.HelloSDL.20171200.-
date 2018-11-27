@@ -14,6 +14,7 @@ public:
 	void update();
 	void render();
 	void clean();
+	void Quit();
 	void handleEvents();
 	bool running() { return m_bRunning; }
 
@@ -23,7 +24,7 @@ public:
 		}
 		return s_pInstance;
 	}
-
+	GameStateMachine* getStateMachine() { return m_pGameStateMachine; }
 	SDL_Renderer* getRenderer() const { return renderer; }
 	SDL_Window* getWindow() const { return window; }
 	GameStateMachine * m_pGameStateMachine;
@@ -34,6 +35,5 @@ private:
 	SDL_Renderer *renderer;
 	Game();
 	~Game();
-	std::vector<GameObject*> m_gameObjects;
 };
 typedef Game TheGame;
