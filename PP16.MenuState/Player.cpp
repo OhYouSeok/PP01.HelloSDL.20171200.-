@@ -9,20 +9,10 @@ void Player::draw()
 {
 	SDLGameObject::draw(); // we now use SDLGameObject
 	BulletManager::getInstance()->draw();
-	//for (std::vector<Bullet*>::size_type i = 0;
-	//	i != m_Bullets.size(); i++)
-	//{
-	//	m_Bullets[i]->draw();
-	//}
 }
 void Player::update()
 {
 	BulletManager::getInstance()->update();
-	//for (std::vector<Bullet*>::size_type i = 0;
-	//	i != m_Bullets.size(); i++)
-	//{
-	//	m_Bullets[i]->update();
-	//}
 	m_velocity.setX(0);
 	m_velocity.setY(0);
 	handleInput(); // add our function
@@ -57,5 +47,6 @@ void Player::handleInput()
 		/*m_Bullets.push_back(new Bullet(new LoaderParams(m_position.getX()+50, m_position.getY()+50, 10, 10, "bullet")));*/
 		BulletManager::getInstance()->PushBackBullet(new Bullet(new LoaderParams(m_position.getX()+50, m_position.getY()+50, 10, 10, "bullet")));
 	}
-
+	Vector2D* vec = TheInputHandler::Instance()->getMousePosition();
+	m_velocity = (*vec - m_position) / 100;
 }
