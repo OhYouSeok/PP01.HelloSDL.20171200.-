@@ -46,8 +46,9 @@ void Player::handleInput()
 	//if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_1)) {
 	//	TheGame::Instance()->clean();
 	//}
-	//if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
-	//	/*m_Bullets.push_back(new Bullet(new LoaderParams(m_position.getX()+50, m_position.getY()+50, 10, 10, "bullet")));*/
-	//	BulletManager::getInstance()->PushBackBullet(new Bullet(new LoaderParams(m_position.getX()+50, m_position.getY()+50, 10, 10, "bullet")));
-	//}
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
+		std::cout << "hi";
+		/*m_Bullets.push_back(new Bullet(new LoaderParams(m_position.getX()+50, m_position.getY()+50, 10, 10, "bullet")));*/
+		BulletManager::getInstance()->PushBackBullet(new Bullet(new LoaderParams(m_position.getX(), m_position.getY(), 50, 50, "bullet")));
+	}
 }
